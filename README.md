@@ -67,7 +67,7 @@ the master supplied password.
 # Restore the PGP Keys
 
 ```shell
-wget -P ~/.pgp https://github.com/tanducmai/pgp-keys/raw/master/doc/private-keys.tgz.enc && openssl aes-256-cbc -salt -pbkdf2 -in ~/.pgp/private-keys.tgz.enc -out ~/.pgp/private-keys.tgz -d && tar zxvf ~/.pgp/private-keys.tgz -C ~/.pgp && rm ~/.pgp/private-keys.tgz*
+wget -P ~/.pgp https://github.com/duke-mai/pgp-keys/raw/refs/heads/master/private-keys.tgz.enc && openssl aes-256-cbc -salt -pbkdf2 -in ~/.pgp/private-keys.tgz.enc -out ~/.pgp/private-keys.tgz -d && tar zxvf ~/.pgp/private-keys.tgz -C ~/.pgp && rm ~/.pgp/private-keys.tgz*
 ```
 
 # Import Your Keypair
