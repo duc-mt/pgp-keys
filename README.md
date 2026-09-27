@@ -54,34 +54,34 @@ PGP key ID is 3AA5C34371567BD2) or the associated email address
 
 # Backup Your PGP Keys
 
-You can use the provided `backup.sh` script to automate the export, archive, and encryption of your keys:
+You can use the provided `scripts/backup.sh` script to automate the export, archive, and encryption of your keys:
 
 ```shell
-./backup.sh <fingerprint-or-email>
+./scripts/backup.sh <fingerprint-or-email>
 ```
 
-This will generate an updated `pubkey.asc` and a new encrypted `private-keys.tgz.enc` which you can then commit to the repository.
+This will generate an updated `keys/pubkey.asc` and a new encrypted `keys/private-keys.tgz.enc` which you can then commit to the repository.
 
 # Restore the PGP Keys
 
 If you have cloned this repository locally, you can easily restore your keys using the automated script:
 
 ```shell
-./restore.sh
+./scripts/restore.sh
 ```
 
 *(Alternatively, if you are downloading just the encrypted archive remotely without cloning the repo)*:
 ```shell
-wget -P ~/.pgp https://github.com/duc-mt/pgp-keys/raw/refs/heads/master/private-keys.tgz.enc && openssl aes-256-cbc -salt -pbkdf2 -in ~/.pgp/private-keys.tgz.enc -out ~/.pgp/private-keys.tgz -d && tar zxvf ~/.pgp/private-keys.tgz -C ~/.pgp && rm ~/.pgp/private-keys.tgz*
+wget -P ~/.pgp https://github.com/duc-mt/pgp-keys/raw/refs/heads/master/keys/private-keys.tgz.enc && openssl aes-256-cbc -salt -pbkdf2 -in ~/.pgp/private-keys.tgz.enc -out ~/.pgp/private-keys.tgz -d && tar zxvf ~/.pgp/private-keys.tgz -C ~/.pgp && rm ~/.pgp/private-keys.tgz*
 ```
 
 # Import Your Keypair
 
-*(Note: The `./restore.sh` script automates these imports for you if you run it locally.)*
+*(Note: The `./scripts/restore.sh` script automates these imports for you if you run it locally.)*
 
 ```shell
-gpg --import pubkey.asc
-gpg --allow-secret-key-import --import privkey.asc
+gpg --import keys/pubkey.asc
+gpg --allow-secret-key-import --import keys/privkey.asc
 ```
 
 [Trust](https://www.gnupg.org/gph/en/manual.html#AEN346) them if necessary.
