@@ -1,3 +1,8 @@
+# PGP Keys Backup
+
+[![CI](https://github.com/duc-mt/pgp-keys/actions/workflows/ci.yml/badge.svg)](https://github.com/duc-mt/pgp-keys/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 # Table of Contents
